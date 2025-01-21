@@ -5,3 +5,10 @@
 # criteria such as length, number of letters, digits, and special characters
 
 import random
+
+passwordLength = int(input("Enter the desired password length: "))
+for count in range(passwordLength):
+    number = random.randint(0,9)
+    print(number, end="")
+
+
