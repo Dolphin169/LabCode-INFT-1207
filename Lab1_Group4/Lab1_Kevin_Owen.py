@@ -3,3 +3,5 @@
 # Last Modified: 2025-01-
 # Description: A program that generates secure passwords based on user
 # criteria such as length, number of letters, digits, and special characters
+
+import random
