@@ -27,8 +27,15 @@ while is_valid == True:
                                 in_range = passwordChars + passwordNumbers
                                 if in_range > passwordLength:
                                     print("To many Alphanumeric characters. Please enter less Numbers")
-                                else:
-                                    print('yay')
+                                while is_valid == True:
+                                    passwordSpecialChars = input("Please enter the number of special characters for the password: ")
+                                    if passwordSpecialChars.isnumeric():
+                                        passwordSpecialChars = int(passwordSpecialChars)
+                                        in_range = passwordChars + passwordNumbers + passwordSpecialChars
+                                        if in_range > passwordLength:
+                                            print("To many Alphanumeric characters. Please enter less Numbers")
+                                    else:
+                                        print(error_message_valid)
                             else:
                                 print(error_message_valid)
                     else:
