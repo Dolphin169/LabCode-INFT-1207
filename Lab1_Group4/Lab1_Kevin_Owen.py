@@ -21,10 +21,12 @@ def random_special():
 def generate_password(totalLength, charLength, numberLength, specialLength):
     valid = True
     while valid:
-        if totalLength >= charLength + numberLength + specialLength:
+        if totalLength == charLength + numberLength + specialLength:
             valid = False
+        elif totalLength > charLength + numberLength + specialLength:
+            return
         else:
-           return print("Please enter an amount of characters less then your total length")
+           return
     password = []
     for counter in range(charLength):
         character = random_char()
@@ -77,19 +79,13 @@ def main():
             password_numbers = int(input("Please enter the amount of numbers: "))
             password_special = int(input("Please enter the amount of special characters: "))
             is_valid = False
+            # Step 3: Generate the password
+            final_password = generate_password(password_length, password_letters, password_numbers, password_special)
+            # Step 4: Display the generated password
+            print(f"Your password is: " + final_password)
         except:
-            print("error: Invalid integer, Please enter again")
-        final_password = generate_password(password_length, password_letters, password_numbers, password_special)
-
-        print(f"Your password is: " + final_password)
-
-
-    # Step 3: Generate the password
-    print("Your user generated password is: ")
-    generate_password(password_length, password_letters, password_numbers, password_special)
-
-
-    # Step 4: Display the generated password
+            print("error: Invalid integer or amount of characters, Please enter again")
+            is_valid = True
 
     # Step 5: Save password to file
 
