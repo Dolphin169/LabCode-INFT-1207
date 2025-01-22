@@ -1,82 +1,63 @@
-
 import random
 import string
 
 
-# Variables and arrays
-MAX_LENGTH = 28
-MIN_LENGTH = 4
+MIN_VALUE = 4
+MAX_VALUE = 28
+# Functions
+def random_char():
+    character = random.choice(string.ascii_letters)
+    return character
 
-is_valid = True
-error_message_valid = "Please enter a valid integer"
-#Create a while loop for error checking
-while is_valid == True:
-        is_valid1 = True
-        is_valid2 = True
-        is_valid3 = True
-        # Ask user for password length
-        passwordLength = input("Please enter the desired password length between 4-28: ")
-        # Check if the string input is an integer
-        if passwordLength.isnumeric():
-            # Convert the string to an integer
-            passwordLength = int(passwordLength)
-            # Check the password length is not between 4 and 28
-            if passwordLength < MIN_LENGTH or passwordLength > MAX_LENGTH:
-                # Print error message
-                print("Password is not in range: Please enter a integer between 4 and 28")
-                # Check the password length is equal to or between 4 and 28
-            elif passwordLength >= MIN_LENGTH and passwordLength <= MAX_LENGTH:
-                # Create a while loop for error checking
-                while is_valid1 == True:
-                    # Ask user for character length
-                    passwordChars = input("Please enter the number of characters for the password: ")
-                    # check if the string input is a integer
-                    if passwordChars.isnumeric():
-                        # Convert the string to an integer
-                        passwordChars = int(passwordChars)
-                        is_valid1 = False
-                        # Create a while loop for error checking
-                        while is_valid2 == True:
-                            # Ask user for number length
-                            passwordNumbers = input("Please enter the number of numbers for the password: ")
-                            # Check if user string is an integer
-                            if passwordNumbers.isnumeric():
-                                # convert the string to an integer
-                                passwordNumbers = int(passwordNumbers)
-                                is_valid2 = False
-                                # Create a while loop for validation
-                                while is_valid3 == True:
-                                    # Take user for special character length
-                                    passwordSpecialChars = input("Please enter the number of special characters for the password: ")
-                                    # Check the string if it is a integer
-                                    if passwordSpecialChars.isnumeric():
-                                        # If so convert the string into an integer
-                                        passwordSpecialChars = int(passwordSpecialChars)
-                                        is_valid3 = False
-                                        is_valid = False
-                                        # Check if the numbers add up to the length of password overall
-                                        in_range = passwordChars + passwordNumbers + passwordSpecialChars
-                                        if in_range != passwordLength:
-                                            print("Please enter the correct length of characters")
-                                            is_valid = True
+def random_number():
+    number = random.choice(string.digits)
+    return number
 
+def random_special():
+    special = random.choice(string.punctuation)
+    return special
+# Function to get user input (skeleton)
+def get_user_input(prompt, min_value, max_value):
+    # Implement logic to get valid user input within a range
+    if prompt < min_value or prompt > max_value:
+        # Print error message
+        print(f"Password is not in range: Please enter a integer between {min_value} and {max_value}")
+        is_valid = True
+        # Check the password length is between 4 and 28
+    elif prompt > min_value and prompt < max_value:
+        pass
 
+    pass
 
+# Function to generate a password (skeleton)
+def generate_password(length, num_letters, num_digits, num_specials):
+    # Ensure total requested characters do not exceed length
+    # Generate required characters (letters, digits, specials)
+    # Fill remaining characters
+    # Shuffle and return password
+    pass
 
+# Main function (skeleton)
+def main():
+    print("\n--- Secure Password Generator ---\n")
 
+    # Step 1: Get user inputs for password length and character distribution
+    is_valid = True
+    while is_valid == True:
+        try:
+            passwordLength = int(input("Please enter the desired password length between 4-28: "))
+            get_user_input(passwordLength, MIN_VALUE, MAX_VALUE)
+            is_valid = False
+        except:
+            print("error")
+            is_valid = True    # Step 2: Validate user inputs
 
+    # Step 3: Generate the password
 
-                                    else:
-                                        print(error_message_valid)
-                            else:
-                                print(error_message_valid)
-                    else:
-                        print(error_message_valid)
-        else:
-            print(error_message_valid)
+    # Step 4: Display the generated password
 
-randomPassword = []
-for count in range(passwordChars):
-    randomChoice=random.sample(alphebet)
+    # Step 5: Save password to file
 
-    randomPassword.append(randomChoice)
+# Entry point of the script
+if __name__ == "__main__":
+    main()
