@@ -52,8 +52,6 @@ def get_user_input(prompt, min_value, max_value):
             pass
             return True
 
-
-
 # Main function (skeleton)
 def main():
     print("\n--- Secure Password Generator ---\n")
@@ -75,12 +73,13 @@ def main():
             password_letters = int(input("Please enter the amount of letters: "))
             password_numbers = int(input("Please enter the amount of numbers: "))
             password_special = int(input("Please enter the amount of special characters: "))
+            is_valid = False
         except:
             print("error: Invalid integer, Please enter again")
-        print(generate_password(password_length, password_letters, password_numbers, password_special))
-
-
     # Step 3: Generate the password
+    print("Your user generated password is: ")
+    generate_password(password_length, password_letters, password_numbers, password_special)
+
 
     # Step 4: Display the generated password
 
