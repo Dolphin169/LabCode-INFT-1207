@@ -1,9 +1,22 @@
 import random
 import string
 
+# Functions
+def random_char():
+    character = random.choice(string.ascii_letters)
+    return character
+
+def random_number():
+    number = random.choice(string.digits)
+    return number
+
+def random_special():
+    special = random.choice(string.punctuation)
+    return special
 # Function to get user input (skeleton)
 def get_user_input(prompt, min_value, max_value):
     # Implement logic to get valid user input within a range
+
     pass
 
 # Function to generate a password (skeleton)
