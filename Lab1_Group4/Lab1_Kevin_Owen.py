@@ -3,6 +3,7 @@ import string
 from operator import index
 from random import shuffle
 
+
 MIN_VALUE = 4
 MAX_VALUE = 28
 # Functions
@@ -88,6 +89,8 @@ def main():
             is_valid = True
 
     # Step 5: Save password to file
+    with open("GenPassword.txt", "w") as file:
+        file.write(final_password)
 
 # Entry point of the script
 if __name__ == "__main__":
