@@ -76,6 +76,7 @@ def main():
             password_letters = int(input("Please enter the amount of letters: "))
             password_numbers = int(input("Please enter the amount of numbers: "))
             password_special = int(input("Please enter the amount of special characters: "))
+            is_valid = False
         except:
             print("error: Invalid integer, Please enter again")
         final_password = generate_password(password_length, password_letters, password_numbers, password_special)
@@ -84,6 +85,9 @@ def main():
 
 
     # Step 3: Generate the password
+    print("Your user generated password is: ")
+    generate_password(password_length, password_letters, password_numbers, password_special)
+
 
     # Step 4: Display the generated password
 
