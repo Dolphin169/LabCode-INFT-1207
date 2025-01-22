@@ -16,6 +16,33 @@ def random_number():
 def random_special():
     special = random.choice(string.punctuation)
     return special
+
+def generate_password(totalLength, charLength, numberLength, specialLength):
+    valid = True
+    while valid:
+        if totalLength >= charLength + numberLength + specialLength:
+            valid = False
+        else:
+           return print("Please enter an amount of characters less then your total length")
+    password = []
+    for counter in range(charLength):
+        character = random_char()
+        password.append(character)
+
+    for counter in range(numberLength):
+        number = random_number()
+        password.append(number)
+
+    for counter in range(specialLength):
+        special = random_special()
+        password.append(special)
+
+    for counter in range(totalLength):
+        random.shuffle(password)
+        final = password[counter]
+        print(final, end="")
+        pass
+
 # Function to get user input (skeleton)
 def get_user_input(prompt, min_value, max_value):
     # Implement logic to get valid user input within a range
@@ -26,15 +53,7 @@ def get_user_input(prompt, min_value, max_value):
             pass
             return True
 
-# Function to generate a password (skeleton)
-def generate_password(length, num_letters, num_digits, num_specials):
-    # Ensure total requested characters do not exceed length
-    if length != (num_letters + num_digits + num_specials):
-        print("The amount of letters, numbers, and special characters isn't the length")
-    # Generate required characters (letters, digits, specials)
-    # Fill remaining characters
-    # Shuffle and return password
-    pass
+
 
 # Main function (skeleton)
 def main():
@@ -57,7 +76,7 @@ def main():
             password_letters = int(input("Please enter the amount of letters: "))
             password_numbers = int(input("Please enter the amount of numbers: "))
             password_special = int(input("Please enter the amount of special characters: "))
-            generate_password(password_length, password_letters, password_numbers, password_special)
+            print(f"Your generated password is: " + password_length, password_letters, password_numbers, password_special)
         except:
             print("error: Invalid integer, Please enter again")
 
