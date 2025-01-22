@@ -29,6 +29,8 @@ def get_user_input(prompt, min_value, max_value):
 # Function to generate a password (skeleton)
 def generate_password(length, num_letters, num_digits, num_specials):
     # Ensure total requested characters do not exceed length
+    if length != (num_letters + num_digits + num_specials):
+        print("The amount of letters, numbers, and special characters isn't the length")
     # Generate required characters (letters, digits, specials)
     # Fill remaining characters
     # Shuffle and return password
@@ -48,12 +50,16 @@ def main():
                     is_valid = False
             else:
                 print("Please enter a valid integer")
-
-
-    password_letters = int(input("Please enter the amount of letters"))
-    password_numbers = int(input("Please enter the amount of numbers"))
-    password_special = int(input("Please enter the amount of special characters"))
     # Step 2: Validate user inputs
+    is_valid = True
+    while is_valid == True:
+        try:
+            password_letters = int(input("Please enter the amount of letters: "))
+            password_numbers = int(input("Please enter the amount of numbers: "))
+            password_special = int(input("Please enter the amount of special characters: "))
+            generate_password(password_length, password_letters, password_numbers, password_special)
+        except:
+            print("error: Invalid integer, Please enter again")
 
     # Step 3: Generate the password
 
