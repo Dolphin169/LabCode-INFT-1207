@@ -1,7 +1,5 @@
 import random
 import string
-from operator import index
-from random import shuffle
 
 MIN_VALUE = 4
 MAX_VALUE = 28
