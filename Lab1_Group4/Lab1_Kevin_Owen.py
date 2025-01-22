@@ -1,5 +1,6 @@
 import random
 import string
+from operator import index
 from random import shuffle
 
 MIN_VALUE = 4
@@ -36,11 +37,11 @@ def generate_password(totalLength, charLength, numberLength, specialLength):
     for counter in range(specialLength):
         special = random_special()
         password.append(special)
+
     random.shuffle(password)
-    for counter in range(totalLength):
-        final = password[counter]
-        print(final, end="")
-        pass
+
+    final_password = "".join(password)
+    return final_password
 
 # Function to get user input (skeleton)
 def get_user_input(prompt, min_value, max_value):
@@ -77,7 +78,9 @@ def main():
             password_special = int(input("Please enter the amount of special characters: "))
         except:
             print("error: Invalid integer, Please enter again")
-        print(generate_password(password_length, password_letters, password_numbers, password_special))
+        final_password = generate_password(password_length, password_letters, password_numbers, password_special)
+
+        print(f"Your password is: " + final_password)
 
 
     # Step 3: Generate the password
