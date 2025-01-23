@@ -83,7 +83,7 @@ def main():
             # Step 3: Generate the password
             final_password = generate_password(password_length, password_letters, password_numbers, password_special)
             # Step 4: Display the generated password
-            print(f"Your password is: " + final_password)
+            print(f"Your generated password is: " + final_password)
         except:
             print("error: Invalid integer or amount of characters, Please enter again")
             is_valid = True
