@@ -51,7 +51,6 @@ def get_user_input(prompt, min_value, max_value):
             # Print error message
             print(f"Password is not in range: Please enter a integer between {min_value} and {max_value}")
         else:
-            pass
             return True
 
 
