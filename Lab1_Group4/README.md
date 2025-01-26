@@ -42,6 +42,6 @@ how to execute:
 To execute the program you can do it in 2 ways. You can open the file in a editor and run it from there,
 or you can run it through the command console directly by finding the .py file in your directories
 and running the program. in both instances you'll be given a prompt for a length you want
-the password to be and once you give it a password length between 4-28 it will request how many letters,
-numbers, and special characters you would like. Finally, it will promptly give you a generated password
-you can use as you like.
+the password to be and once you give it a password length between 4-28, enter this length as an integer.
+it will then request how many letters, numbers, and special characters you would like. Enter this as an 
+integer as well Finally, it will promptly give you a generated password you can use as you like.
