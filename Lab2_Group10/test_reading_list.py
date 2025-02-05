@@ -12,13 +12,14 @@ class TestReadingList(unittest.TestCase):
             rows = list(reader)
         self.assertIn(["Test Book", "Author Name", "2022"], rows)
 
+        output = add_book("Feafae", "Feafaef", "asdf")
+        self.assertEqual(output, "Error: Not a numeric date")
+
     def test_search_book(self):
         """Test searching for an existing book."""
         output_result = search_book("Test Book")  # Now it returns a value
         expected_output = "Found: Title: Test Book, Author: Author Name, Year: 2022"
         self.assertEqual(output_result, expected_output, "search_book did not return the expected output.")
-
-    # More test cases to be added...
 
 
 if __name__ == '__main__':
