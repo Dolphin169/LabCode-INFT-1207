@@ -7,14 +7,17 @@ def add_book(title, author, year):
         if title != "":
             writer = csv.writer(file)
         else:
+            print("Error: No title")
             return "Error: No title"
         if author != "":
             writer = csv.writer(file)
         else:
+            print("Error: No author")
             return "Error: No author"
         if year.isnumeric():
             writer = csv.writer(file)
         else:
+            print("Error: Not a numeric date")
             return "Error: Not a numeric date"
         writer.writerow([title, author, year])
 
