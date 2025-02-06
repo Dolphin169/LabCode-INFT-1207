@@ -1,6 +1,6 @@
 import unittest
 import csv
-from reading_list import add_book, list_books, search_book
+from reading_list import add_book, list_books, search_book, delete_book
 
 
 class TestReadingList(unittest.TestCase):
@@ -20,6 +20,17 @@ class TestReadingList(unittest.TestCase):
         output_result = search_book("Test Book")  # Now it returns a value
         expected_output = "Found: Title: Test Book, Author: Author Name, Year: 2022"
         self.assertEqual(output_result, expected_output, "search_book did not return the expected output.")
+
+        output_result = search_book("1Q84")  # Now it returns a value
+        expected_output = "Found: Title: 1Q84, Author: Haruki Murakami, Year: 2009"
+        self.assertEqual(output_result, expected_output, "search_book did not return the expected output.")
+
+    def test_delete_book(self):
+        result = delete_book("Life is a Book","Kevin Thomas","2025")
+        expected = "Book 'Life is a Book, Kevin Thomas, 2025' has been deleted"
+        self.assertEqual(result, expected, "delete_book did not return expected output")
+
+    def test_list_books(self):
 
 
 if __name__ == '__main__':

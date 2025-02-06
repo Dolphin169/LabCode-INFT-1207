@@ -37,42 +37,40 @@ def search_book(title):
 
         print('Book not found')
 
-'''def delete_book(title,author,year):
-    with open('books.csv', mode='r') as file:
-        rows = csv.reader(file)
-        new_rows = []
-        for row in rows:
-            if row[0].lower() != title.lower() or row[1].lower() != author.lower() or row[2].lower() != year.lower():
-                new_rows.append(row)
-
-        with open('books.csv', mode='w') as file1:
-            writer = csv.writer(file1)
-            print(new_rows)
-            for row in new_rows:
-                writer.writerow()'''
-
-
-def delete_book(title):
-    found = False
+def delete_book(title,author,year):
+    #set the book were going to delete to false
+    delete = False
+    #make an empty array to add the books to keep
     rows = []
-
-    # Read all rows from the CSV and keep those that don't match the title
-    with open('books.csv', mode='r') as file:
+    #read the file to see what books are there
+    with open("books.csv", mode="r") as file:
+        #make a variable named reader that is the csv format for reading a file
         reader = csv.reader(file)
+        #for each row in the read file in csv format
         for row in reader:
-            if row[0].lower() != title.lower():
+            #check if said row does not contains the correct title, author, and date that we want to delete
+            if row[0].lower() != title.lower() and row[1].lower() != author.lower() and row[2].lower() != year.lower():
+                #if it does not then put it in the array we made
                 rows.append(row)
             else:
-                found = True
+                #if it is the book we want to delete then turn delete to true
+                delete = True
 
-    # If the book was found, rewrite the CSV without it
-    if found:
-        with open('books.csv', mode='w', newline='') as file:
+    #if it is found and the for loop is done
+    if delete:
+        #write the file
+        with open("books.csv", mode="w", newline="") as file:
+            #makes a writer format for csv
             writer = csv.writer(file)
+            #writes the books.csv with rows
             writer.writerows(rows)
-        print(f'Book "{title}" has been deleted.')
+        #prints what book has been deleted
+        print(f"Book '{title}, {author}, {year}' has been deleted")
+        return f"Book '{title}, {author}, {year}' has been deleted"
     else:
-        print('Book not found, nothing to delete.')
+        #if the book cant be found write this message
+        print("Nothing to delete, Book not in list")
+        return "Nothing to delete, Book not in list"
 
 
 # Menu loop
@@ -93,9 +91,9 @@ def menu():
             print(search_book(title))
         elif choice == '4':
             title = input("Enter book title: ")
-            #author = input("Enter author name: ")
-            #year = input("Enter year of publication: ")
-            delete_book(title)
+            author = input("Enter author name: ")
+            year = input("Enter year of publication: ")
+            delete_book(title,author,year)
         elif choice == "5":
             break
         else:
