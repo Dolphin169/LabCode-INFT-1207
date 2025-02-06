@@ -24,10 +24,14 @@ def add_book(title, author, year):
 
 # Function to list all books
 def list_books():
+    list_of_books = []
     with open('books.csv', mode='r') as file:
         reader = csv.reader(file)
         for row in reader:
             print(f'Title: {row[0]}, Author: {row[1]}, Year: {row[2]}')
+            book = f'Title: {row[0]}, Author: {row[1]}, Year: {row[2]}'
+            list_of_books.append(book)
+        return list_of_books
 
 
 # Function to search for a book by title
