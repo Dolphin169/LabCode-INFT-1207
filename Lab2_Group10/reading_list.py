@@ -55,7 +55,7 @@ def delete_book(title,author,year):
         reader = csv.reader(file)
         #for each row in the read file in csv format
         for row in reader:
-            #check if said row does not contains the correct title, author, and date that we want to delete
+            #check if said row does not contain the correct title, author, and date that we want to delete
             if row[0].lower() != title.lower() and row[1].lower() != author.lower() and row[2].lower() != year.lower():
                 #if it does not then put it in the array we made
                 rows.append(row)
