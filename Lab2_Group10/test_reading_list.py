@@ -31,7 +31,7 @@ class TestReadingList(unittest.TestCase):
         self.assertEqual(result, expected, "delete_book did not return expected output")
 
     def test_list_books(self):
-
+        print("")
 
 if __name__ == '__main__':
     unittest.main()
