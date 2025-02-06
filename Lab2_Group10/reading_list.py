@@ -31,7 +31,8 @@ def list_books():
             print(f'Title: {row[0]}, Author: {row[1]}, Year: {row[2]}')
             book = f'Title: {row[0]}, Author: {row[1]}, Year: {row[2]}'
             list_of_books.append(book)
-        return list_of_books
+        books = " ".join(list_of_books)
+        return books
 
 
 # Function to search for a book by title
