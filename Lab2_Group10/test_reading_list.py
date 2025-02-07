@@ -10,7 +10,7 @@ class TestReadingList(unittest.TestCase):
         with open("books.csv", "r") as file:
             reader = csv.reader(file)
             rows = list(reader)
-        #self.assertIn(["Test Book", "Author Name", "2022"], rows)
+        self.assertIn(["Test Book", "Author Name", "2022"], rows)
 
         output = add_book("Feafae", "Feafaef", "asdf")
         self.assertEqual(output, "Error: Not a numeric date")
