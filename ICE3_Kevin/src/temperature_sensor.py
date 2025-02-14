@@ -49,9 +49,9 @@ def process_temperatures(temp_list):
 
     if invalid_inputs:
         return f"Invalid inputs detected: {', '.join(map(str, invalid_inputs))}"
-
-    min_temp = min(valid_temps)
-    max_temp = max(valid_temps)
+    valid_temps.sort()
+    min_temp = valid_temps[0]
+    max_temp = valid_temps[-1]
     avg_temp = round(statistics.mean(valid_temps), 2)
 
     return f"Min: {min_temp}°C, Max: {max_temp}°C, Avg: {avg_temp}°C"
@@ -70,7 +70,16 @@ test_cases = [
     [2**31 - 1, - 2**31],
     [10,10,10],
     ["asdf",12345,"!@#$%"],
-    ["Eight",9999999999999999999]
+    ["Eight",9999999999999999999],
+    [-50],
+    [150],
+    [-49, 149],
+    [-60,20,160],
+    [20, "abc", 30],
+    [10, "@", -40],
+    [2**31 - 1, -2**31],
+    [50, 50, 50],
+    []
 ]
 
 # Running the test cases
