@@ -26,6 +26,3 @@ class TestTemperatureSensor(unittest.TestCase):
         self.assertEqual(process_temperatures([10,10,10]), "Min: 10.0°C, Max: 10.0°C, Avg: 10.0°C")
         self.assertRaises(Exception, process_temperatures(["asdf",12345,"!@#$%"]))
         self.assertRaises(Exception, process_temperatures(["Eight",9999999999999999999]))
-
-if __name__ == '__main__':
-    unittest.main()
