@@ -23,4 +23,10 @@ def ellipse_area(a, b):
 
 
 def rhombus_area(d1, d2):
-    return 0.5 * d1 * d2
+    if isinstance(d1, (int,float)) and isinstance(d2, (int,float)):
+        if d1 >= 0 and d2 >= 0:
+            return 0.5 * d1 * d2
+        else:
+            raise ValueError("Invalid Range: Please enter values greater than 0 or 0")
+    else:
+        raise ValueError("Invalid Value: Please enter a Integer or Float")

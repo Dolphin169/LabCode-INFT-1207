@@ -16,6 +16,7 @@ def run_tests(choice):
         suite.addTest(TestShapes('test_ellipse_area_valid'))
     elif choice == 'r':
         suite.addTest(TestShapes('test_rhombus_area_valid'))
+        suite.addTest(TestShapes('test_rhombus_area_invalid'))
     else:
         print("Invalid choice. Exiting.")
         return

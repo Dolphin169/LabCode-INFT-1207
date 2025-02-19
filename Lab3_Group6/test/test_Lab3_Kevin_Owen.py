@@ -28,9 +28,12 @@ class TestShapes(unittest.TestCase):
 
     # def test_ellipse_area_invalid(self):
 
-    # def test_rhombus_area_valid(self):
+    def test_rhombus_area_valid(self):
+        self.assertEqual(rhombus_area(11,3), 16.5)
 
-    # def test_rhombus_area_invalid(self):
+    def test_rhombus_area_invalid(self):
+        with self.assertRaises(ValueError):
+            rhombus_area(-1, 10000)
 
 
 if __name__ == "__main__":
