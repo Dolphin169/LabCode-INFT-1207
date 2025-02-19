@@ -9,7 +9,13 @@ def circle_area(r):
 
 
 def trapezium_area(a, b, h):
-    return 0.5 * (a + b) * h
+    if isinstance(a, (int, float)) and isinstance(b, (int, float)) and isinstance(h, (int,float)):
+        if a >= 0 and b >= 0 and h >= 0:
+            return 0.5 * (a + b) * h
+        else:
+            raise ValueError("Invalid Range: Please enter values greater than 0 or 0")
+    else:
+        raise ValueError("Invalid Value: Please enter a Integer or Float")
 
 
 def ellipse_area(a, b):

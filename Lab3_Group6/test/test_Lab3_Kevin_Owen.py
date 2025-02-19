@@ -17,9 +17,12 @@ class TestShapes(unittest.TestCase):
         with self.assertRaises(ValueError):
             circle_area(-1)
 
-    # def test_trapezium_area_valid(self):
+    def test_trapezium_area_valid(self):
+        self.assertEqual(trapezium_area(1,9,5), 25.0)
 
-    # def test_trapezium_area_invalid(self):
+    def test_trapezium_area_invalid(self):
+        with self.assertRaises(ValueError):
+            trapezium_area(-11,0,100)
 
     # def test_ellipse_area_valid(self):
 
