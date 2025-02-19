@@ -17,10 +17,12 @@ def trapezium_area(a, b, h):
     else:
         raise ValueError("Invalid Value: Please enter a Integer or Float")
 
-
 def ellipse_area(a, b):
+    if not (isinstance(a, (int, float)) and isinstance(b, (int, float))):
+        raise ValueError("Invalid Range: Please enter values greater then 0 or 0")
+    if not a >= 0 and b >= 0:
+        raise ValueError("Invalid Value: Ple")
     return pi * a * b
-
 
 def rhombus_area(d1, d2):
     if isinstance(d1, (int,float)) and isinstance(d2, (int,float)):

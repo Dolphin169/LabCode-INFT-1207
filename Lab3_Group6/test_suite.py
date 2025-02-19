@@ -14,6 +14,7 @@ def run_tests(choice):
         suite.addTest(TestShapes('test_trapezium_area_invalid'))
     elif choice == 'e':
         suite.addTest(TestShapes('test_ellipse_area_valid'))
+        suite.addTest(TestShapes('test_ellipse_area_invalid'))
     elif choice == 'r':
         suite.addTest(TestShapes('test_rhombus_area_valid'))
         suite.addTest(TestShapes('test_rhombus_area_invalid'))

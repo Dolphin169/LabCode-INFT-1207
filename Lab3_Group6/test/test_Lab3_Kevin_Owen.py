@@ -24,9 +24,14 @@ class TestShapes(unittest.TestCase):
         with self.assertRaises(ValueError):
             trapezium_area(-11,0,100)
 
-    # def test_ellipse_area_valid(self):
+    def test_ellipse_area_valid(self):
+        self.assertEqual(ellipse_area(20, 15), 942.4777960769379)
 
-    # def test_ellipse_area_invalid(self):
+
+    def test_ellipse_area_invalid(self):
+        with self.assertRaises(ValueError):
+            ellipse_area(-20, "a")
+
 
     def test_rhombus_area_valid(self):
         self.assertEqual(rhombus_area(11,3), 16.5)
