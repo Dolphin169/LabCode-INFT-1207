@@ -21,6 +21,7 @@ class TestLab4KevinOwen():
   def test_lab4KevinOwen(self):
     self.driver.get("https://www.calculator.net/body-fat-calculator.html")
     self.driver.set_window_size(550, 696)
+    # VALID WOMEN VALUES
     self.driver.find_element(By.CSS_SELECTOR, ".cbcontainer:nth-child(2)").click()
     self.driver.find_element(By.NAME, "cage").click()
     self.driver.find_element(By.NAME, "cage").clear()
@@ -42,6 +43,7 @@ class TestLab4KevinOwen():
     self.driver.find_element(By.ID, "chipmeter").send_keys("100")
     self.driver.find_element(By.NAME, "x").click()
     assert self.driver.find_element(By.CSS_SELECTOR, "font > b").text == "Body Fat: 23.0%"
+    # VALID MEN VALUES
     self.driver.find_element(By.CSS_SELECTOR, ".cbcontainer:nth-child(1) > .rbmark").click()
     self.driver.find_element(By.NAME, "cage").click()
     self.driver.find_element(By.NAME, "cage").clear()
@@ -60,6 +62,7 @@ class TestLab4KevinOwen():
     self.driver.find_element(By.ID, "cwaistmeter").send_keys("100")
     self.driver.find_element(By.NAME, "x").click()
     assert self.driver.find_element(By.CSS_SELECTOR, "font > b").text == "Body Fat: 60.7%"
+    # INVALID WOMEN AGE
     self.driver.find_element(By.CSS_SELECTOR, ".cbcontainer:nth-child(2)").click()
     self.driver.find_element(By.NAME, "cage").click()
     self.driver.find_element(By.NAME, "cage").clear()
